@@ -3,11 +3,11 @@
  */
 package com.oguzdev.circularfloatingactionmenu.library;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.PixelFormat;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,7 +53,7 @@ public class FloatingActionButton extends FrameLayout {
         super(context);
         this.systemOverlay = systemOverlay;
 
-        if(!systemOverlay && !(context instanceof Activity)) {
+        if(!systemOverlay && !(context instanceof AppCompatActivity)) {
             throw new RuntimeException("Given context must be an instance of Activity, "
                     +"since this FAB is not a systemOverlay.");
         }
@@ -199,7 +199,7 @@ public class FloatingActionButton extends FrameLayout {
      */
     public View getActivityContentView() {
         try {
-            return ((Activity) getContext()).getWindow().getDecorView().findViewById(android.R.id.content);
+            return ((AppCompatActivity) getContext()).getWindow().getDecorView().findViewById(android.R.id.content);
         }
         catch(ClassCastException e) {
             throw new ClassCastException("Please provide an Activity context for this FloatingActionButton.");

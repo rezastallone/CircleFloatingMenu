@@ -3,7 +3,6 @@
  */
 package com.oguzdev.circularfloatingactionmenu.library;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.Path;
 import android.graphics.PathMeasure;
@@ -12,6 +11,7 @@ import android.graphics.Point;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.hardware.SensorManager;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.Display;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -392,7 +392,7 @@ public class FloatingActionMenu {
      */
     public View getActivityContentView() {
         try {
-            return ((Activity) mainActionView.getContext()).getWindow().getDecorView().findViewById(android.R.id.content);
+            return ((AppCompatActivity) mainActionView.getContext()).getWindow().getDecorView().findViewById(android.R.id.content);
         }
         catch(ClassCastException e) {
             throw new ClassCastException("Please provide an Activity context for this FloatingActionMenu.");

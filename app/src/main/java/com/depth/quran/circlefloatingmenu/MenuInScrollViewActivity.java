@@ -1,9 +1,9 @@
 package com.depth.quran.circlefloatingmenu;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,7 +19,7 @@ import com.oguzdev.circularfloatingactionmenu.library.SubActionButton;
 
 import java.util.ArrayList;
 
-public class MenuInScrollViewActivity extends ActionBarActivity implements FloatingActionMenu.MenuStateChangeListener, ViewTreeObserver.OnScrollChangedListener, View.OnLayoutChangeListener {
+public class MenuInScrollViewActivity extends AppCompatActivity implements FloatingActionMenu.MenuStateChangeListener, ViewTreeObserver.OnScrollChangedListener, View.OnLayoutChangeListener {
 
     private ArrayList<FloatingActionMenu> menus;
     private FloatingActionMenu currentMenu;
